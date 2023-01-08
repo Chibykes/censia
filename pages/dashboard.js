@@ -95,31 +95,31 @@ export default function Dashboard() {
               <div className='col-span-2 grid grid-cols-3 gap-4'>
                 <div className='p-4 space-y-2 bg-white'>
                   <p className='font-bold'>Most Populus State</p>
-                  <p className='text-3xl'>{mode(people.map(p => p.state))}</p>
+                  <p className='text-3xl'>{mode(people.map(p => p.state)) || "-"}</p>
                 </div>
                 <div className='p-4 space-y-2 bg-white'>
                   <p className='font-bold'>Youngest Age Recorded</p>
-                  <p className='text-3xl'>{people.map(p => getAge(p.dob)).sort()[0]} yrs</p>
+                  <p className='text-3xl'>{people.map(p => getAge(p.dob)).sort()[0] || "0"} yrs</p>
                 </div>
                 <div className='p-4 space-y-2 bg-white'>
                   <p className='font-bold'>Oldest Age Recorded</p>
-                  <p className='text-3xl'>{people.map(p => getAge(p.dob)).sort().reverse()[0]} yrs</p>
+                  <p className='text-3xl'>{people.map(p => getAge(p.dob)).sort().reverse()[0] || "0"} yrs</p>
                 </div>
                 <div className='p-4 space-y-2 bg-white'>
                   <p className='font-bold'>Average Age</p>
-                  <p className='text-3xl'>{mean(people.map(p => getAge(p.dob)).sort()).toFixed(1)} yrs</p>
+                  <p className='text-3xl'>{mean(people.map(p => getAge(p.dob)).sort()).toFixed(1) || "0"} yrs</p>
                 </div>
                 <div className='p-4 space-y-2 bg-white'>
                   <p className='font-bold'>Shortest Height Recorded</p>
-                  <p className='text-3xl'>{people.map(p => p.height).sort()[0]} cm</p>
+                  <p className='text-3xl'>{people.map(p => p.height).sort()[0] || "0"} cm</p>
                 </div>
                 <div className='p-4 space-y-2 bg-white'>
                   <p className='font-bold'>Tallest Height Recorded</p>
-                  <p className='text-3xl'>{people.map(p => p.height).sort().reverse()[0]} cm</p>
+                  <p className='text-3xl'>{people.map(p => p.height).sort().reverse()[0] || "0"} cm</p>
                 </div>
                 <div className='p-4 space-y-2 bg-white'>
                   <p className='font-bold'>Average Height</p>
-                  <p className='text-3xl'>{mean(people.map(p => p.height).sort()).toFixed(1)} cm</p>
+                  <p className='text-3xl'>{mean(people.map(p => p.height).sort()).toFixed(1) || "0"} cm</p>
                 </div>
               </div>
             </div>
