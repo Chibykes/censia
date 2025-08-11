@@ -1,22 +1,26 @@
-import Link from 'next/link';
-import { BsFillBellFill } from 'react-icons/bs';
-import { HiUserCircle } from 'react-icons/hi';
+import Link from "next/link";
+import { BsFillBellFill } from "react-icons/bs";
+import { HiUserCircle } from "react-icons/hi";
 
 export default function Navbar({ page }) {
-
   return (
-    <div className='print:hidden flex items-center justify-end p-6 gap-6 bg-white border-none border-neutral-200'>
-      <p className='mr-auto font-bold text-2xl'>{page}</p>
+    <div className="flex items-center justify-end gap-4 border-none border-neutral-200 bg-white p-4 print:hidden lg:gap-6 lg:p-6">
+      <p className="mr-auto pl-12 text-lg font-bold lg:pl-0 lg:text-2xl">
+        {page}
+      </p>
 
-      <Link className="flex flex-col items-center gap-1 text-app-primary" href="#">
-        <BsFillBellFill className='text-xl' />
-        {/* <span className='text-xs font-bold'>Notifications</span> */}
+      <Link
+        className="text-app-primary flex flex-col items-center gap-1"
+        href="#"
+      >
+        <BsFillBellFill className="text-lg lg:text-xl" />
       </Link>
-      <Link className="flex flex-col items-center gap-1 text-app-primary" href="#">
-        <HiUserCircle className='text-xl' />
-        {/* <span className='text-xs font-bold'>Profile</span> */}
+      <Link
+        className="text-app-primary flex flex-col items-center gap-1"
+        href="#"
+      >
+        <HiUserCircle className="text-lg lg:text-xl" />
       </Link>
-
     </div>
-  )
+  );
 }
