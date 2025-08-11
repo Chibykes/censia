@@ -199,10 +199,9 @@ export default function New() {
                   required
                 />
 
-                <div className="col-span-3">
+                <div className="col-span-full md:col-span-2">
                   <Input
                     name="address"
-                    value={form[this]}
                     onChange={(e) =>
                       setForm({ ...form, [e.target.name]: e.target.value })
                     }
